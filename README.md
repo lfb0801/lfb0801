@@ -33,7 +33,7 @@ My name is Lloyd, I'm a young developer who likes taking on challenges
 [<img align="left" alt="lfb0801 | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
 [<img align="left" alt="lfb0801 | gmail" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg" />][gmail]
 
-[twitter]: https://twitter.com/codeSTACKr
-[instagram]: https://instagram.com/codeSTACKr
-[linkedin]: https://linkedin.com/in/codeSTACKr
+[twitter]: https://twitter.com/lfb0801
+[instagram]: https://instagram.com/lfb0801
+[linkedin]: https://www.linkedin.com/in/lloyd-van-zaalen-5b01b1149/
 [gmail]: mailto:lfb0801@gmail.com
