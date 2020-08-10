@@ -2,7 +2,7 @@
 My name is Lloyd, I'm a young developer who likes taking on challenges
 
 ### Fun facts
-- I'm currently working at [<img alt="Work" width="26px" src="https://media-exp1.licdn.com/dms/image/C510BAQGL8foSqpZ86A/company-logo_200_200/0?e=1604534400&v=beta&t=T2gAp07TudFFTsV9i8-M7d2PgzWiPLGGxpQXmGg2PJ4"/>](https://www.bim-connected.com)
+- I'm currently working at [<img alt="Work" width="26px" src="https://media-exp1.licdn.com/dms/image/C510BAQGL8foSqpZ86A/company-logo_200_200/0?e=1604534400&v=beta&t=T2gAp07TudFFTsV9i8-M7d2PgzWiPLGGxpQXmGg2PJ4"/>](https://github.com/bim-connected)
 - I'm currently studing for a [<img alt="Certificate" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tensorflow/tensorflow.png"/>](https://www.tensorflow.org/certificate) certificate
 - I’m currently working on <img alt="Gradle" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/gradle/gradle.png"/>
 - I’m currently learning:
