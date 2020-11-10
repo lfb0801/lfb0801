@@ -65,6 +65,10 @@ My name is Lloyd, I'm a young developer who likes taking on challenges
 
 <br>
 
+### Interesting tools
+<a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse-ci<a/>
+<br>
+
 ### Contact me at
 [<img align="left" alt="lfb0801 | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
 [<img align="left" alt="lfb0801 | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
