@@ -7,7 +7,6 @@ My name is Lloyd, I'm a young developer who likes taking on challenges
 - I’m currently working on <img alt="Gradle" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/gradle/gradle.png"/>
 - I’m currently learning:
   - <img alt="Vim" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vim/vim.png"/>
-  - <img alt="Docker" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png"/>
 
 ### Languages, Frameworks and Tools:
 <table>
@@ -59,6 +58,8 @@ My name is Lloyd, I'm a young developer who likes taking on challenges
     </td>
     <td>
   <img alt="Gradle" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/gradle/gradle.png"/>
+    </td>
+    <td>
     </td>
   </tr>
 </table>
