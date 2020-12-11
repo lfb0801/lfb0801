@@ -1,11 +1,6 @@
 ### About me
 My name is Lloyd, I'm a young developer who likes taking on challenges
 
-### Fun facts
-- I'm currently studing for a [<img alt="Certificate" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tensorflow/tensorflow.png"/>](https://www.tensorflow.org/certificate) certificate
-- I’m currently working on <img alt="Python" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png"/>
-- I’m currently learning: <img alt="Vim" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vim/vim.png"/>
-
 ### Languages, Frameworks and Tools:
 <table>
   <tr>
