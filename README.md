@@ -2,7 +2,7 @@
 My name is Lloyd, I'm a young developer who likes taking on challenges
 
 <details>
-<summary>Languages, Frameworks and Tools:</summary>
+<summary><h3> Languages, Frameworks and Tools: </h3></summary>
 <br>
 <table>
   <tr>
