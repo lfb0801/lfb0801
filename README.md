@@ -1,7 +1,9 @@
 ### About me
 My name is Lloyd, I'm a young developer who likes taking on challenges
 
-### Languages, Frameworks and Tools:
+<details>
+<summary>Languages, Frameworks and Tools:</summary>
+<br>
 <table>
   <tr>
     <td>
@@ -56,7 +58,7 @@ My name is Lloyd, I'm a young developer who likes taking on challenges
     </td>
   </tr>
 </table>
-
+</details>
 <br>
 
 ### Interesting tools
