@@ -73,11 +73,6 @@ My name is Lloyd, I'm a young developer who likes taking on challenges
     </td>
     <tr>
     <td>
-      <img alt="Docker" 
-           width="52px" 
-           src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png"/>
-    </td>
-    <td>
       <img alt="Gradle" 
            width="52px" 
            src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/maven/maven.png"/>
@@ -86,8 +81,6 @@ My name is Lloyd, I'm a young developer who likes taking on challenges
       <img alt="Gradle"
            width="52px" 
            src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/gradle/gradle.png"/>
-    </td>
-    <td>
     </td>
   </tr>
 </table>
