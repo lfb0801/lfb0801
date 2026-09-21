@@ -3,6 +3,7 @@ name: Deploy terminal garden to GitHub Pages
 on:
   push:
     branches:
+      - main
       - master
   workflow_dispatch:
 
@@ -24,6 +25,8 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Test terminal sandbox
         run: npm test
