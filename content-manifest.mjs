@@ -13,6 +13,31 @@ export const CONTENT_ENTRIES = [
   { path: "/projects", type: "directory" },
   { path: "/projects/README.md", type: "file", source: "./content/projects/README.md" },
   {
+    path: "/projects/gradle-forge.md",
+    type: "file",
+    source: "./content/projects/gradle-forge.md",
+  },
+  {
+    path: "/projects/ci-cd.md",
+    type: "file",
+    source: "./content/projects/ci-cd.md",
+  },
+  {
+    path: "/projects/ai-paired-engineering.md",
+    type: "file",
+    source: "./content/projects/ai-paired-engineering.md",
+  },
+  {
+    path: "/projects/platform-intake.md",
+    type: "file",
+    source: "./content/projects/platform-intake.md",
+  },
+  {
+    path: "/projects/project-monorepo.md",
+    type: "file",
+    source: "./content/projects/project-monorepo.md",
+  },
+  {
     path: "/projects/terminal-garden.md",
     type: "file",
     source: "./content/projects/terminal-garden.md",
