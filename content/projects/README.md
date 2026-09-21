@@ -6,6 +6,11 @@ That is more useful than a wall of repository cards: it shows how a decision was
 
 ## Available now
 
+- [gradle-forge.md](/projects/gradle-forge.md) — composable conventions for trustworthy JVM builds
+- [ci-cd.md](/projects/ci-cd.md) — delivery pipelines treated as executable engineering policy
+- [ai-paired-engineering.md](/projects/ai-paired-engineering.md) — pairing with agents without delegating judgment
+- [platform-intake.md](/projects/platform-intake.md) — turning requests into evidence for platform decisions
+- [project-monorepo.md](/projects/project-monorepo.md) — coordinating related changes in one versioned workspace
 - [terminal-garden.md](/projects/terminal-garden.md) — the website you are currently exploring
 
 ## Case-study shape
