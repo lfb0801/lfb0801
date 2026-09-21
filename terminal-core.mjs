@@ -1,8 +1,9 @@
-const COMMANDS = ["help", "ls", "cd", "pwd", "show", "cat", "whoami", "clear", "clean"];
+const COMMANDS = ["help", "ls", "tree", "cd", "pwd", "show", "cat", "whoami", "clear", "clean"];
 
 const HELP_LINES = [
   "help              show this command guide",
   "ls [path]         list files",
+  "tree [path]       list files recursively",
   "cd [path]         change directory",
   "pwd               print current directory",
   "show <file>       render a Markdown file",
@@ -93,6 +94,24 @@ function directChildren(entries, directory) {
     });
 }
 
+function treeLines(entries, entry) {
+  const label = entry.path === "/" ? "." : `${basename(entry.path)}${entry.type === "directory" ? "/" : ""}`;
+  if (entry.type === "file") return [label];
+
+  function descendants(directory, prefix = "") {
+    return directChildren(entries, directory).flatMap((child, index, children) => {
+      const last = index === children.length - 1;
+      const branch = last ? "└── " : "├── ";
+      const childLabel = `${basename(child.path)}${child.type === "directory" ? "/" : ""}`;
+      const line = `${prefix}${branch}${childLabel}`;
+      if (child.type === "file") return [line];
+      return [line, ...descendants(child.path, `${prefix}${last ? "    " : "│   "}`)];
+    });
+  }
+
+  return [label, ...descendants(entry.path)];
+}
+
 function action(kind, cwd, lines = [], extra = {}) {
   return { kind, lines, cwd, ...extra };
 }
@@ -159,6 +178,13 @@ export function createTerminalEngine({ entries, initialPath = "/" }) {
       return action("output", cwd, lines);
     }
 
+    if (command === "tree") {
+      const resolved = resolveKnown(target || cwd);
+      if (resolved.error) return action("error", cwd, [resolved.error]);
+      if (!resolved.entry) return action("error", cwd, [`path not found: ${target}`]);
+      return action("output", cwd, treeLines(entries, resolved.entry));
+    }
+
     if (command === "show" || command === "cat") {
       if (!target) return action("error", cwd, [`usage: ${command} <file>`]);
       const resolved = resolveKnown(target);
@@ -188,7 +214,7 @@ export function createTerminalEngine({ entries, initialPath = "/" }) {
     const separator = source.indexOf(" ");
     const command = source.slice(0, separator);
     const partial = source.slice(separator + 1);
-    if (!["cd", "ls", "show", "cat"].includes(command)) return source;
+    if (!["cd", "ls", "tree", "show", "cat"].includes(command)) return source;
 
     const partialDirectory = partial.includes("/") ? partial.slice(0, partial.lastIndexOf("/") + 1) : "";
     const partialName = partial.slice(partialDirectory.length);

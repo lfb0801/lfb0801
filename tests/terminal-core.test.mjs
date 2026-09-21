@@ -26,6 +26,7 @@ test("help exposes only the supported sandbox commands", () => {
   assert.deepEqual(result.lines, [
     "help              show this command guide",
     "ls [path]         list files",
+    "tree [path]       list files recursively",
     "cd [path]         change directory",
     "pwd               print current directory",
     "show <file>       render a Markdown file",
@@ -59,6 +60,32 @@ test("ls returns directories before files in a stable order", () => {
     "󰈙  about.md",
     "󰈙  contact.md",
   ]);
+});
+
+test("tree returns a recursively nested view in the same stable order", () => {
+  const engine = createEngine();
+
+  assert.deepEqual(engine.execute("tree").lines, [
+    ".",
+    "├── ideas/",
+    "│   ├── README.md",
+    "│   └── reasoning.md",
+    "├── projects/",
+    "│   └── README.md",
+    "├── README.md",
+    "├── about.md",
+    "└── contact.md",
+  ]);
+  assert.deepEqual(engine.execute("tree ideas").lines, [
+    "ideas/",
+    "├── README.md",
+    "└── reasoning.md",
+  ]);
+  assert.deepEqual(engine.execute("tree README.md").lines, ["README.md"]);
+
+  const missing = engine.execute("tree missing");
+  assert.equal(missing.kind, "error");
+  assert.match(missing.lines[0], /not found/);
 });
 
 test("show and cat open only known Markdown files", () => {
@@ -123,6 +150,8 @@ test("completion handles commands and paths without inventing entries", () => {
   const engine = createEngine();
 
   assert.equal(engine.complete("sho"), "show ");
+  assert.equal(engine.complete("tr"), "tree ");
+  assert.equal(engine.complete("tree pro"), "tree projects/");
   assert.equal(engine.complete("show REA"), "show README.md");
   assert.equal(engine.complete("cd id"), "cd ideas/");
   assert.equal(engine.complete("show missing"), "show missing");
