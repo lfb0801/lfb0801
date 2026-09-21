@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#070b0d">
+    <meta name="theme-color" content="#111111">
     <meta
       name="description"
       content="Lloyd van Zaalen's terminal garden: ideas, case studies, and notes on making engineering reasoning visible."
@@ -19,7 +19,7 @@
     <meta property="og:image" content="https://lfb0801.github.io/og.png">
     <meta
       property="og:image:alt"
-      content="A dark split-screen terminal typing show README.md beside the title Terminal Garden."
+      content="A minimal dark terminal displaying Lloyd van Zaalen's personal website."
     >
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lloyd van Zaalen — Terminal Garden">
@@ -38,16 +38,10 @@
       <section class="workspace" id="workspace">
         <section class="terminal panel" id="terminal" aria-label="Interactive portfolio terminal">
           <header class="window-bar">
-            <div class="window-controls" aria-hidden="true">
-              <span class="window-control close"></span>
-              <span class="window-control minimise"></span>
-              <span class="window-control maximise"></span>
-            </div>
             <p class="window-title">
-              <span class="terminal-mark" aria-hidden="true">›_</span>
-              lloyd@garden
+              <span aria-hidden="true">$</span> lloyd@garden
             </p>
-            <p class="sandbox-status"><span aria-hidden="true"></span> sandboxed</p>
+            <p class="sandbox-status">read only</p>
           </header>
 
           <div class="terminal-body">
@@ -65,7 +59,7 @@
               <span class="prompt-separator" aria-hidden="true">@</span>
               <span class="prompt-host" aria-hidden="true">garden</span>
               <span class="prompt-path" id="prompt-path" aria-hidden="true">~</span>
-              <span class="prompt-symbol" aria-hidden="true">❯</span>
+              <span class="prompt-symbol" aria-hidden="true">$</span>
               <input
                 id="command-input"
                 name="command"
@@ -88,7 +82,7 @@
         <section class="reader panel" id="reader" aria-hidden="true">
           <header class="reader-bar">
             <p class="reader-path">
-              <span aria-hidden="true">󰈙</span>
+              <span aria-hidden="true">--</span>
               <span id="reader-path">~/README.md</span>
             </p>
             <div class="reader-meta">

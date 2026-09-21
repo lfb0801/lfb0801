@@ -42,7 +42,7 @@ function appendCommand(command, cwd) {
 
   const prompt = document.createElement("span");
   prompt.className = "line-prompt";
-  prompt.textContent = `lloyd@garden:${toDisplayPath(cwd)} ❯`;
+  prompt.textContent = `lloyd@garden:${toDisplayPath(cwd)} $`;
 
   const value = document.createElement("span");
   value.textContent = command;
