@@ -38,6 +38,11 @@ export const CONTENT_ENTRIES = [
     source: "./content/projects/project-monorepo.md",
   },
   {
+    path: "/projects/claude-skill-args.md",
+    type: "file",
+    source: "./content/projects/claude-skill-args.md",
+  },
+  {
     path: "/projects/terminal-garden.md",
     type: "file",
     source: "./content/projects/terminal-garden.md",
