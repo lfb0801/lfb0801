@@ -51,8 +51,3 @@ jobs:
           git commit -m 'Synchronize public project catalog'
           git push
           echo 'changed=true' >> "$GITHUB_OUTPUT"
-      - name: Publish updated catalog
-        if: steps.commit.outputs.changed == 'true'
-        run: gh workflow run publish.yml --repo lfb0801/lfb0801.github.io --ref master
-        env:
-          GH_TOKEN: ${{ secrets.PAGES_DISPATCH_TOKEN }}
