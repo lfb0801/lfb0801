@@ -2,7 +2,7 @@
 
 ## Context
 
-The site currently presents a strong idea with very little evidence behind it: a terminal-shaped personal garden containing seven Markdown documents and roughly one thousand words. It names four recurring interests—Java and backend design, delivery systems, refactoring education, and AI-assisted engineering—but only the Terminal Garden itself has a project page, and only visible engineering reasoning has an idea page.
+The site currently presents a strong idea with very little evidence behind it: a terminal-based personal website containing seven Markdown documents and roughly one thousand words. It names four recurring interests—Java and backend design, delivery systems, refactoring education, and AI-assisted engineering—but only the Personal Website itself has a project page, and only visible engineering reasoning has an idea page.
 
 The expansion should make the promise true. A reader should be able to explore a substantial body of work and leave with a clear sense of how Lloyd frames problems, handles constraints, rejects alternatives, acts under uncertainty, and learns from outcomes.
 
@@ -24,7 +24,7 @@ The owner is unavailable during implementation and provided no corrections to th
 - Do not invent named employers, clients, credentials, dates, team sizes, exact metrics, or identifiable incidents.
 - Do not present a composite case as a verified historical engagement.
 - Do not add unsupported claims of seniority, leadership scope, or commercial impact.
-- Do not redesign the terminal garden, add a CMS, introduce a framework, or add server-side behavior.
+- Do not redesign the personal website, add a CMS, introduce a framework, or add server-side behavior.
 - Do not add analytics, comments, a newsletter, a conversion funnel, or external publishing automation.
 - Do not push, deploy, or otherwise make the new drafts public.
 
@@ -85,7 +85,7 @@ The content tree expands to the following collections:
 
 ### Projects
 
-`projects/` contains long decision narratives. Target: at least twelve leaf documents, including the observed Terminal Garden case and clearly labeled composite or reconstructed cases across backend design, delivery, refactoring, teaching, and AI-assisted engineering.
+`projects/` contains long decision narratives. Target: at least twelve leaf documents, including the observed Personal Website case and clearly labeled composite or reconstructed cases across backend design, delivery, refactoring, teaching, and AI-assisted engineering.
 
 Each case uses this shape:
 

@@ -12,7 +12,7 @@ That is more useful than a wall of repository cards: it shows how a decision was
 - [platform-intake.md](/projects/platform-intake.md) — turning requests into evidence for platform decisions
 - [project-monorepo.md](/projects/project-monorepo.md) — coordinating related changes in one versioned workspace
 - [claude-skill-args.md](/projects/claude-skill-args.md) — enumerated `!value` arguments for Claude Code skills
-- [terminal-garden.md](/projects/terminal-garden.md) — the website you are currently exploring
+- [personal-website.md](/projects/personal-website.md) — the website you are currently exploring
 
 ## Case-study shape
 

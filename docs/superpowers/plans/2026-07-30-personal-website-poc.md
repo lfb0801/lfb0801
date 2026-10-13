@@ -1,8 +1,8 @@
-# Terminal Garden POC Implementation Plan
+# Personal Website POC Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build a dependency-free, GitHub Pages-ready portfolio POC that behaves like a safe terminal and renders a real Markdown-based digital garden.
+**Goal:** Build a dependency-free, GitHub Pages-ready portfolio POC that behaves like a safe terminal and renders a real Markdown-based personal website.
 
 **Architecture:** A static HTML shell owns presentation and browser interaction. A small pure JavaScript command engine accepts only an explicit allowlist and returns declarative actions; the browser controller performs those actions against a fixed virtual filesystem manifest. Real Markdown files live under `content/` and are rendered in the document pane.
 
@@ -50,7 +50,7 @@ Run: `node --test tests/terminal-core.test.mjs`
 
 Expected: all tests pass.
 
-### Task 2: Terminal garden interface
+### Task 2: Personal website interface
 
 **Files:**
 - Create: `index.html`
@@ -81,9 +81,9 @@ Support Enter, history with ArrowUp/ArrowDown, Tab completion, safe Markdown fet
 
 Stack the reader below the terminal on narrow screens, expose command output to assistive technology, preserve focus, provide a motion-free opening path, and keep touch targets usable.
 
-- [ ] **Step 4: Add the starter garden**
+- [ ] **Step 4: Add the starter content**
 
-Introduce Lloyd, explain the garden, expose the four connected engineering themes, include discoverable contact details, and clearly mark project content as an evolving collection.
+Introduce Lloyd, explain the website, expose the four connected engineering themes, include discoverable contact details, and clearly mark project content as an evolving collection.
 
 ### Task 3: GitHub profile and Pages delivery
 
@@ -100,7 +100,7 @@ Introduce Lloyd, explain the garden, expose the four connected engineering theme
 
 - [ ] **Step 1: Replace the obsolete profile README**
 
-Create a concise GitHub-native introduction that points toward the terminal garden without duplicating its content.
+Create a concise GitHub-native introduction that points toward the personal website without duplicating its content.
 
 - [ ] **Step 2: Add a deterministic static build**
 

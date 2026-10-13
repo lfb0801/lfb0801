@@ -47,7 +47,7 @@ test("navigation resolves relative paths but cannot escape the virtual root", ()
   const escape = engine.execute("cd ../../outside");
   assert.equal(escape.kind, "error");
   assert.equal(escape.cwd, "/");
-  assert.match(escape.lines[0], /virtual garden/);
+  assert.match(escape.lines[0], /virtual filesystem/);
 });
 
 test("ls returns directories before files in a stable order", () => {
@@ -125,7 +125,7 @@ test("unknown commands fail with a discoverable next step", () => {
   const result = createEngine().execute("sudo");
 
   assert.equal(result.kind, "error");
-  assert.deepEqual(result.lines, ["command not found: sudo", "type `help` to see what this garden understands"]);
+  assert.deepEqual(result.lines, ["command not found: sudo", "type `help` to see what this terminal understands"]);
 });
 
 test("clear and clean return declarative UI actions", () => {

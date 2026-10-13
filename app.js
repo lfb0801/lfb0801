@@ -42,7 +42,7 @@ function appendCommand(command, cwd) {
 
   const prompt = document.createElement("span");
   prompt.className = "line-prompt";
-  prompt.textContent = `lloyd@garden:${toDisplayPath(cwd)} $`;
+  prompt.textContent = `lloyd@website:${toDisplayPath(cwd)} $`;
 
   const value = document.createElement("span");
   value.textContent = command;
@@ -80,7 +80,7 @@ function virtualLinkPath(href) {
 async function openDocument(path) {
   const entry = CONTENT_BY_PATH.get(path);
   if (!entry?.source) {
-    appendLine(`reader error: ${path} is not in the garden manifest`, "error");
+    appendLine(`reader error: ${path} is not in the content manifest`, "error");
     return;
   }
 
@@ -150,7 +150,7 @@ async function playOpeningSequence(path) {
   input.readOnly = true;
 
   appendLine("LLOYD/OS 0.1 — personal knowledge environment", "system");
-  appendLine(`mounting ${CONTENT_ENTRIES.filter((entry) => entry.type === "file").length} garden files…`, "system");
+  appendLine(`mounting ${CONTENT_ENTRIES.filter((entry) => entry.type === "file").length} content files…`, "system");
   appendLine("capabilities: read-only · allowlisted · local", "success");
   appendLine();
 

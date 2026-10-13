@@ -72,7 +72,7 @@ function resolvePath(rawPath, cwd) {
     if (!segment || segment === ".") continue;
     if (segment === "..") {
       if (base.length === 0) {
-        return { error: "path cannot leave the virtual garden" };
+        return { error: "path cannot leave the virtual filesystem" };
       }
       base.pop();
       continue;
@@ -200,7 +200,7 @@ export function createTerminalEngine({ entries, initialPath = "/" }) {
 
     return action("error", cwd, [
       `command not found: ${command}`,
-      "type `help` to see what this garden understands",
+      "type `help` to see what this terminal understands",
     ]);
   }
 

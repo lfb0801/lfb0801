@@ -9,7 +9,7 @@ I’m a software engineer interested in the parts of engineering that are easy t
 - **Refactoring and engineering education** — turning tacit judgment into something teachable
 - **AI-assisted engineering** — using agents to sharpen decisions without outsourcing responsibility
 
-I leave career labels out of this garden. The work and the quality of the reasoning should carry that signal themselves.
+I leave career labels out of this website. The work and the quality of the reasoning should carry that signal themselves.
 
 ## Why a terminal?
 

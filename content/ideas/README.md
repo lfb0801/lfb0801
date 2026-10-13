@@ -1,6 +1,6 @@
 # Ideas
 
-This directory is a digital garden rather than a publication schedule. Notes can begin as a question, collect counterexamples, and mature into an essay or project.
+This directory is a collection of working notes rather than a publication schedule. Notes can begin as a question, collect counterexamples, and mature into an essay or project.
 
 ## Current seed
 

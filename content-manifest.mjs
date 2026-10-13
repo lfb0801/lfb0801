@@ -43,9 +43,9 @@ export const CONTENT_ENTRIES = [
     source: "./content/projects/claude-skill-args.md",
   },
   {
-    path: "/projects/terminal-garden.md",
+    path: "/projects/personal-website.md",
     type: "file",
-    source: "./content/projects/terminal-garden.md",
+    source: "./content/projects/personal-website.md",
   },
 ];
 

@@ -1,4 +1,4 @@
-# Terminal garden
+# Personal website
 
 > Status: working proof of concept
 

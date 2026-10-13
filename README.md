@@ -4,7 +4,7 @@ I explore how engineering reasoning can stay visible—from Java and backend des
 
 ```console
 $ show README.md
-opening the terminal garden…
+opening the personal website…
 ```
 
 Visit **[lfb0801.github.io](https://lfb0801.github.io)** to browse the working notes and case studies as a small read-only filesystem.

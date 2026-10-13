@@ -1,4 +1,4 @@
-# A terminal garden for unfinished thinking
+# A personal website for unfinished thinking
 
 I’m **Lloyd van Zaalen**. This is a small, read-only filesystem where I collect ideas, decisions, and project case studies about software engineering.
 

@@ -25,4 +25,4 @@ await cp(join(root, "content"), join(destination, "content"), { recursive: true 
 await cp(join(root, "public", "og.png"), join(destination, "og.png"));
 await writeFile(join(destination, ".nojekyll"), "");
 
-console.log(`Built ${publicFiles.length + 1} assets and the Markdown garden into dist/.`);
+console.log(`Built ${publicFiles.length + 1} assets and the Markdown content into dist/.`);

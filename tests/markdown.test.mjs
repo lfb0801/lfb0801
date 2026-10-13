@@ -3,15 +3,15 @@ import assert from "node:assert/strict";
 
 import { renderMarkdown } from "../markdown.mjs";
 
-test("renders the garden's headings, paragraphs, lists, links, and inline code", () => {
-  const html = renderMarkdown(`# Garden
+test("renders Markdown headings, paragraphs, lists, links, and inline code", () => {
+  const html = renderMarkdown(`# Notes
 
 An [external link](https://example.com) and \`show README.md\`.
 
 - first
 - second`);
 
-  assert.match(html, /<h1>Garden<\/h1>/);
+  assert.match(html, /<h1>Notes<\/h1>/);
   assert.match(html, /<p>An <a href="https:\/\/example\.com"/);
   assert.match(html, /<code>show README\.md<\/code>/);
   assert.match(html, /<ul><li>first<\/li><li>second<\/li><\/ul>/);
