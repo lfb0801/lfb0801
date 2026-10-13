@@ -8,7 +8,7 @@ It is deliberately more workshop than showroom. Some files are finished; others 
 
 - [about.md](/about.md) — the person behind the prompt
 - [ideas/README.md](/ideas/README.md) — working notes and recurring questions
-- [projects/README.md](/projects/README.md) — case studies without requiring repository access
+- [projects/README.md](/projects/README.md) — public GitHub projects, their READMEs, and additional notes
 - [contact.md](/contact.md) — ways to reach me, if something here starts a conversation
 
 ## The connecting thread

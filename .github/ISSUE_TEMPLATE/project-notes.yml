@@ -1,0 +1,19 @@
+name: Add project notes
+description: Add context beyond a project's GitHub README through a pull request.
+title: "Project notes: "
+body:
+  - type: input
+    id: project
+    attributes:
+      label: Project
+      description: The repository name from the site's project page.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional content
+      description: Markdown to add alongside the README. Submitting this issue creates a pull request for review.
+      placeholder: Explain the problem, your decisions, examples, outcomes, or what you learned.
+    validations:
+      required: true

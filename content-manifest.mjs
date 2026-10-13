@@ -1,3 +1,5 @@
+import { GITHUB_PROJECT_ENTRIES } from "./github-projects.mjs";
+
 export const CONTENT_ENTRIES = [
   { path: "/", type: "directory" },
   { path: "/README.md", type: "file", source: "./content/README.md" },
@@ -11,42 +13,7 @@ export const CONTENT_ENTRIES = [
     source: "./content/ideas/making-engineering-reasoning-visible.md",
   },
   { path: "/projects", type: "directory" },
-  { path: "/projects/README.md", type: "file", source: "./content/projects/README.md" },
-  {
-    path: "/projects/gradle-forge.md",
-    type: "file",
-    source: "./content/projects/gradle-forge.md",
-  },
-  {
-    path: "/projects/ci-cd.md",
-    type: "file",
-    source: "./content/projects/ci-cd.md",
-  },
-  {
-    path: "/projects/ai-paired-engineering.md",
-    type: "file",
-    source: "./content/projects/ai-paired-engineering.md",
-  },
-  {
-    path: "/projects/platform-intake.md",
-    type: "file",
-    source: "./content/projects/platform-intake.md",
-  },
-  {
-    path: "/projects/project-monorepo.md",
-    type: "file",
-    source: "./content/projects/project-monorepo.md",
-  },
-  {
-    path: "/projects/claude-skill-args.md",
-    type: "file",
-    source: "./content/projects/claude-skill-args.md",
-  },
-  {
-    path: "/projects/personal-website.md",
-    type: "file",
-    source: "./content/projects/personal-website.md",
-  },
+  ...GITHUB_PROJECT_ENTRIES,
 ];
 
 export const CONTENT_BY_PATH = new Map(

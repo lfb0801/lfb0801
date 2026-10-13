@@ -1,0 +1,58 @@
+name: Synchronize public GitHub projects
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - scripts/sync-projects.mjs
+      - scripts/project-catalog.mjs
+      - scripts/github-api.mjs
+      - content/project-notes/**
+      - .github/workflows/sync-projects.yml
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: public-project-sync
+  cancel-in-progress: false
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Fetch public projects and notify removals
+        run: npm run sync:projects
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CREATE_REMOVAL_ISSUES: "true"
+      - name: Verify catalog
+        run: |
+          npm test
+          npm run build
+      - name: Commit catalog changes
+        id: commit
+        run: |
+          if git diff --quiet -- github-projects.mjs; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add github-projects.mjs
+          git commit -m 'Synchronize public project catalog'
+          git push
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+      - name: Publish updated catalog
+        if: steps.commit.outputs.changed == 'true'
+        run: gh workflow run publish.yml --repo lfb0801/lfb0801.github.io --ref master
+        env:
+          GH_TOKEN: ${{ secrets.PAGES_DISPATCH_TOKEN }}

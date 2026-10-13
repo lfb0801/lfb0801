@@ -79,15 +79,18 @@ function virtualLinkPath(href) {
 
 async function openDocument(path) {
   const entry = CONTENT_BY_PATH.get(path);
-  if (!entry?.source) {
+  if (!entry || (!entry.source && typeof entry.markdown !== "string")) {
     appendLine(`reader error: ${path} is not in the content manifest`, "error");
     return;
   }
 
   try {
-    const response = await fetch(entry.source);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const markdown = await response.text();
+    let markdown = entry.markdown;
+    if (entry.source) {
+      const response = await fetch(entry.source);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      markdown = await response.text();
+    }
 
     currentDocumentPath = path;
     readerPath.textContent = toDisplayPath(path);
@@ -226,6 +229,7 @@ documentView.addEventListener("click", (event) => {
   if (!link) return;
 
   const href = link.getAttribute("href");
+  if (/^(https?:|mailto:)/i.test(href || "")) return;
   if (!href?.toLowerCase().endsWith(".md")) return;
 
   event.preventDefault();

@@ -1,0 +1,27 @@
+name: Propose additional project notes
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: project-notes-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  propose:
+    if: startsWith(github.event.issue.title, 'Project notes:') && github.event.issue.state == 'open' && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Create or update notes pull request
+        run: node scripts/propose-project-notes.mjs
+        env:
+          GH_TOKEN: ${{ secrets.PAGES_DISPATCH_TOKEN || github.token }}

@@ -1,27 +1,7 @@
-# Project case studies
+# Projects
 
-Much of the strongest engineering work cannot be made public as source code. This directory will describe that work through the problem, constraints, reasoning, trade-offs, and observed outcomes instead.
+The website's project catalog follows every public repository owned by [lfb0801 on GitHub](https://github.com/lfb0801?tab=repositories). It refreshes hourly and keeps the order alphabetical.
 
-That is more useful than a wall of repository cards: it shows how a decision was made, not merely that code exists.
+Each project shows its GitHub description and README. Use **Add project notes** on a project page to open an issue for extra context, decisions, examples, or outcomes. Submitting that issue creates a pull request; merging it adds the notes to the site.
 
-## Available now
-
-- [gradle-forge.md](/projects/gradle-forge.md) — composable conventions for trustworthy JVM builds
-- [ci-cd.md](/projects/ci-cd.md) — delivery pipelines treated as executable engineering policy
-- [ai-paired-engineering.md](/projects/ai-paired-engineering.md) — pairing with agents without delegating judgment
-- [platform-intake.md](/projects/platform-intake.md) — turning requests into evidence for platform decisions
-- [project-monorepo.md](/projects/project-monorepo.md) — coordinating related changes in one versioned workspace
-- [claude-skill-args.md](/projects/claude-skill-args.md) — enumerated `!value` arguments for Claude Code skills
-- [personal-website.md](/projects/personal-website.md) — the website you are currently exploring
-
-## Case-study shape
-
-Each future file should answer:
-
-- What was difficult or uncertain?
-- Which constraints mattered?
-- What alternatives were rejected, and why?
-- What changed after the work?
-- What would I do differently now?
-
-Content from private work will stay abstract enough to respect confidentiality without becoming vague.
+When a repository is no longer public or available, the next successful synchronization removes it from the catalog and opens a notice issue. Notes remain in version control for later use.
