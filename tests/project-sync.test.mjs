@@ -105,3 +105,23 @@ test("notes create a branch and PR, and repeat edits update the existing PR", as
   assert.equal(mutations.length, 1);
   assert.equal(mutations[0].body.sha, "blob");
 });
+
+test("when GitHub blocks bot-created PRs, notes still get a review link in the issue", async () => {
+  let comment;
+  const request = async (path, options) => {
+    if (path.endsWith("/pulls") && options?.method === "POST") throw new Error("GitHub POST: HTTP 403");
+    if (path.includes("/comments")) {
+      if (options?.method === "POST") { comment = options.body.body; return {}; }
+      return [];
+    }
+    if (options?.method) return {};
+    if (path === "/repos/lfb0801/demo") return repo("demo");
+    if (path === "/repos/lfb0801/lfb0801") return repo("lfb0801");
+    if (path.endsWith("/heads/master")) return { object: { sha: "base" } };
+    if (path.includes("/pulls?")) return [];
+    return null;
+  };
+  const result = await proposeProjectNotes(issue(), request);
+  assert.match(result.html_url, /compare\/master\.\.\.project-notes\/issue-42/);
+  assert.match(comment, /Review the notes and open a pull request/);
+});

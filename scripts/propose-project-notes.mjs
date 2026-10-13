@@ -47,11 +47,26 @@ export async function proposeProjectNotes(issue, request) {
   if (open) return open;
   const baseFile = await request(`/repos/${SITE_REPOSITORY}/contents/${path}?ref=${encodeURIComponent(base)}`, { allow404: true });
   if (baseFile && Buffer.from(baseFile.content, "base64").toString("utf8") === notes) return null;
-  return request(`/repos/${SITE_REPOSITORY}/pulls`, {
-    method: "POST",
-    body: { title: `Add project notes for ${name}`, head: branch, base,
-      body: `Adds the additional Markdown submitted in #${issue.number} alongside this project's GitHub README. Merging publishes the notes after synchronization.\n\nCloses #${issue.number}` },
-  });
+  try {
+    return await request(`/repos/${SITE_REPOSITORY}/pulls`, {
+      method: "POST",
+      body: { title: `Add project notes for ${name}`, head: branch, base,
+        body: `Adds the additional Markdown submitted in #${issue.number} alongside this project's GitHub README. Merging publishes the notes after synchronization.\n\nCloses #${issue.number}` },
+    });
+  } catch (error) {
+    if (!/HTTP 403/.test(error.message)) throw error;
+    // Some repositories disable bot-created PRs. Keep the proposed file reviewable.
+    const marker = "<!-- project-notes-review-link -->";
+    const compare = `https://github.com/${SITE_REPOSITORY}/compare/${base}...${branch}?expand=1`;
+    const comments = await request(`/repos/${SITE_REPOSITORY}/issues/${issue.number}/comments?per_page=100`);
+    if (!comments.some(comment => comment.body?.includes(marker))) {
+      await request(`/repos/${SITE_REPOSITORY}/issues/${issue.number}/comments`, {
+        method: "POST",
+        body: { body: `${marker}\n\nYour project notes are ready on a branch. GitHub did not permit the workflow to open a pull request automatically. [Review the notes and open a pull request](${compare}).\n\nTo enable automatic PRs, turn on **Allow GitHub Actions to create and approve pull requests** in this repository's Actions settings.` },
+      });
+    }
+    return { html_url: compare };
+  }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

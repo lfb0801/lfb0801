@@ -6,4 +6,4 @@ You can also add or edit these files directly. The next synchronization includes
 
 The source repository synchronizes hourly. The hosting repository also refreshes and publishes hourly, or immediately when its **Deploy personal website to root GitHub Pages site** workflow is run manually.
 
-For issue-to-PR automation, enable **Allow GitHub Actions to create and approve pull requests** in this repository's Actions settings. If an existing `PAGES_DISPATCH_TOKEN` is available, the notes workflow uses it instead.
+For automatic PR creation, enable **Allow GitHub Actions to create and approve pull requests** in this repository's Actions settings. If GitHub denies PR creation, the workflow adds a review link to the issue so you can open the PR yourself. If an existing `PAGES_DISPATCH_TOKEN` is available, the notes workflow uses it instead.
