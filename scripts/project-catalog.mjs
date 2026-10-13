@@ -1,5 +1,10 @@
 export const OWNER = "lfb0801";
 export const SITE_REPOSITORY = "lfb0801/lfb0801";
+export const DEFAULT_EXCLUDED_PROJECTS = new Set([SITE_REPOSITORY]);
+
+export function isProjectExcluded(fullName) {
+  return DEFAULT_EXCLUDED_PROJECTS.has(fullName.toLowerCase());
+}
 
 export function publicProjects(repositories) {
   if (!Array.isArray(repositories)) throw new Error("Invalid repository list.");
@@ -9,6 +14,7 @@ export function publicProjects(repositories) {
   }
   return repositories.filter(repo => repo.private === false &&
     repo.owner?.login?.toLowerCase() === OWNER &&
+    !isProjectExcluded(`${repo.owner.login}/${repo.name}`) &&
     /^[a-zA-Z0-9_.-]+$/.test(repo.name) && ![".", ".."].includes(repo.name))
     .sort((a, b) => a.name.localeCompare(b.name, "en"));
 }
@@ -35,12 +41,13 @@ export function readmeMarkdown(readme, repo) {
 export function projectChanges(previous, current) {
   const before = new Set(previous);
   const after = new Set(current);
-  return { added: current.filter(name => !before.has(name)), removed: previous.filter(name => !after.has(name)) };
+  return { added: current.filter(name => !before.has(name)),
+    removed: previous.filter(name => !after.has(name) && !isProjectExcluded(name)) };
 }
 
 export function catalogEntries(projects) {
   const index = ["# Public GitHub projects", "",
-    "All public repositories owned by [lfb0801](https://github.com/lfb0801?tab=repositories), refreshed hourly.", "",
+    "Public repositories owned by [lfb0801](https://github.com/lfb0801?tab=repositories), refreshed hourly.", "",
     "Open a project for its README and additional notes. Use **Add project notes** to propose more context through an issue and pull request.", ""];
   if (!projects.length) index.push("There are currently no public projects.");
   for (const { repo } of projects) index.push(`- [${repo.name}](/projects/github/${repo.name}.md)`);

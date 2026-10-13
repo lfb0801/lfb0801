@@ -11,7 +11,7 @@ function repo(name, extra = {}) {
 }
 
 test("catalog includes all owned public repositories, including forks, and rejects incomplete metadata", () => {
-  const projects = publicProjects([repo("z"), repo("a", { fork: true }), repo("private", { private: true }),
+  const projects = publicProjects([repo("z"), repo("a", { fork: true }), repo("lfb0801"), repo("private", { private: true }),
     repo("foreign", { owner: { login: "elsewhere" } })]);
   assert.deepEqual(projects.map(r => r.name), ["a", "z"]);
   assert.throws(() => publicProjects([{}]), /Incomplete/);
@@ -53,7 +53,7 @@ test("removal excludes the old project and its notes and opens one notice", asyn
   const posted = [];
   let output;
   const options = {
-    previous: ["lfb0801/removed"], readNotes: async () => "", notifyRemovals: true,
+    previous: ["lfb0801/removed", "lfb0801/lfb0801"], readNotes: async () => "", notifyRemovals: true,
     writeCatalog: async value => { output = value; },
     request: async (path, options) => {
       if (path.includes("/users/")) return [repo("current")];
